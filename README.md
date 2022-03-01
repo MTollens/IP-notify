@@ -10,3 +10,15 @@ if the address is determined to have changed, then the program calls a second py
 the IP address is pulled from IFCONFIG via the Ubuntu Bash terminal.
 
 written for Ubuntu Linux but usable on other setups with minor changes
+
+to use: 
+1. download both files
+2. (reccomended) set the ip_notify.py to run via a cron job on system startup
+3. create a new file called "tokenfile" inside put on the first line your Telegram bot API token, which you will need to have set up beforhand
+tokenfile contents should look similar to this:
+line 1|'XXXX:123412341234'
+4. other small tweaks may be needed depending on your requirements
+ - message and IP format, check frequency, etc..
+5. modify the simple_telegram.py and either uncomment one of the desired examples under main(), or add your own. default includes IP address using grep and bash
+6. restart machine 
+7. you may need to send the bot a message the first time so that it knows it can send messages to your account, but further interaction shouldnt be required
